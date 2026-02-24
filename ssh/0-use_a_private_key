@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# an ssh command to connect to a remote server with ssh
+# Connects to the server using the private key ~/.ssh/school
 
-ssh -i ~/.ssh/school ubuntu@<SERVER_IP>
+ssh -i ~/.ssh/school ubuntu@$1
