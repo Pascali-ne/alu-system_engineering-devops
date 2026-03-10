@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script installs nginx and configures it to return "Holberton School"
+# Install nginx and configure root page with Holberton School
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
