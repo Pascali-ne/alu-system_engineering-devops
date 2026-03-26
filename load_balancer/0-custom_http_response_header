@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Configures Nginx with a custom X-Served-By response header
+# shellcheck disable=SC2154
+
+apt-get update -y
+apt-get install -y nginx
+
+echo "Holberton School" > /var/www/html/index.html
+
+cat > /etc/nginx/sites-available/default << 'EOF'
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+    server_name _;
+    add_header X-Served-By $hostname;
+}
+EOF
+
+service nginx restart
